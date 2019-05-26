@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.father{
+				width: 200px;
+				height: 200px;
+				
+				margin:300px auto;
+								
+				transform-style: preserve-3d;
+				position: relative;
+				animation: donghua1 4s infinite alternate;
+				/*animation: donghua2 4s infinite;*/
+								
+			}
+			.father .child{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.6;
+				
+			
+				
+			}
+			@keyframes donghua1{
+				from{
+					transform: rotate3d(0,1,0,0deg);
+				}
+				to{
+					transform: rotate3d(0,1,0,720deg);
+				}
+			}
+			
+			/*@keyframes donghua2{
+				from{
+					transform: rotate3d(1,1,0,720deg);
+				}
+				to{
+					transform: rotate3d(1,-1,0,720deg);
+				}
+			}*/
+			
+			
+			
+			
+			.front{
+				background-image: url(img/img1.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% 100%;
+				/*向前移动100像素*/
+				transform: translateZ(100px);	
+			}
+			
+			/*鼠标放上去 后，图片偏移*/
+			.father:hover .front{
+				transform: translateZ(200px);
+			}
+			
+			
+			.back{
+				background-image: url(img/img2.jpg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				transform: translateZ(-100px);
+			}
+			.father:hover .back{
+				transform:translateZ(-200px)
+			}
+			
+			
+			.left{
+				background-image: url(img/img3.jpeg);
+				background-position:center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			
+			.father:hover .left{
+				transform: rotateY(-90deg) translateZ(200px);
+			}
+			
+			.right{
+				background-image: url(img/img4.jpg);
+				background-position:center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				transform: rotateY(-90deg) translateZ(-100px);
+				
+			}
+			
+			.father:hover .right{
+				transform: rotateY(90deg) translateZ(200px);
+			}
+			
+			.top{
+				background-image: url(img/img5.jpg);
+				background-position:center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				transform: rotateX(-90deg) translateZ(-100px);
+			}
+			
+			.father:hover .top{
+				transform: rotateX(-90deg) translateZ(-200px);
+			}
+			
+			.bottom{
+				background-image: url(img/img6.jpg);
+				background-position:center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.father:hover .bottom{
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="child front"></div>
+			<div class="child back"></div>
+			<div class="child left"></div>
+			<div class="child right"></div>
+			<div class="child top"></div>
+			<div class="child bottom"></div>
+		</div>
+	</body>
+</html>
